@@ -7,7 +7,9 @@
   <h1 class="display-4">Acme Auto Client Management System</h1>
   <p class="lead">Car Sales and Service Client Management System.</p>
   <p class="lead">
+    {% if user.is_authenticated %}
        <a class="btn btn-primary btn-lg" href="{% url 'client_list' %}" role="button">View All Clients</a>
+    {% endif %}
   </p>
 </div>
 {% endblock content %}

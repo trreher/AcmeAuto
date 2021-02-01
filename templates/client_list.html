@@ -8,6 +8,7 @@
   {% for client in object_list %}
     <div class="card">
       <div class="card-header">
+        <h2>Client</h2>
         <span class="font-weight-bold">{{ client.name }}</span>
         <span class="font-weight-bold">cell: {{ client.cell_phone }} | </span>
         <span class="font-weight-bold">acct: {{ client.acct_number }} | </span>
@@ -24,6 +25,7 @@
       </div>
       <div class="card-footer">
       {% for comment in client.comments.all %}
+          <h2>Comments</h2>
             <p>
               <span class="font-weight-bold">{{ comment.author }} &middot;</span>
               {{ comment }}
