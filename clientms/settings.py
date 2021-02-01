@@ -25,7 +25,7 @@ SECRET_KEY = 'b4!j6+!wi%e6jp(vplcpi5m_zz37ygmd(@^or$s_oj+)_5l#po'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['trreher.pythonanywhere.com']
 
 # Custom Application Models
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -129,3 +129,7 @@ STATIC_URL = '/static/'
 #Redirects
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
