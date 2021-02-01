@@ -3,6 +3,8 @@
 {% block title %}Clients{% endblock title %}
 
 {% block content %}
+  <h1>Acme Auto Client List</h1>
+  <br>
   {% for client in object_list %}
     <div class="card">
       <div class="card-header">
@@ -18,15 +20,15 @@
       </div>
       <div class="card-body">
         <p>{{client.notes}}</p>
-        <p><a href="{% url 'client_edit' client.pk %}">Edit</a> | <a href="{% url 'client_delete' client.pk %}">Delete</a></p>
+        <p><a href="{% url 'client_edit' client.pk %}">Edit</a> | <a href="{% url 'client_delete' client.pk %}">Delete</a> | <a href="{% url 'comment_new' client.pk %}">Add Comment</a></p>
       </div>
       <div class="card-footer">
-        {% for comment in client.comments.all %}
-          <p>
-            <span class="font-weight-bold">{{ comment.author }} &middot;</span>
-            {{ comment }}
-          </p>
-        {% endfor %}
+      {% for comment in client.comments.all %}
+            <p>
+              <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+              {{ comment }}
+            </p>
+      {% endfor %}
       </div>
     </div>
     <br />
