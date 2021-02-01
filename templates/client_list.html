@@ -8,7 +8,7 @@
   {% for client in object_list %}
     <div class="card">
       <div class="card-header">
-        <h2>Client</h2>
+        <h3>Client</h3>
         <span class="font-weight-bold">{{ client.name }}</span>
         <span class="font-weight-bold">cell: {{ client.cell_phone }} | </span>
         <span class="font-weight-bold">acct: {{ client.acct_number }} | </span>
@@ -24,13 +24,13 @@
         <p><a href="{% url 'client_edit' client.pk %}">Edit</a> | <a href="{% url 'client_delete' client.pk %}">Delete</a> | <a href="{% url 'comment_new' client.pk %}">Add Comment</a></p>
       </div>
       <div class="card-footer">
-      {% for comment in client.comments.all %}
-          <h2>Comments</h2>
-            <p>
-              <span class="font-weight-bold">{{ comment.author }} &middot;</span>
-              {{ comment }}
-            </p>
-      {% endfor %}
+        <h3>Comments</h3>
+        {% for comment in client.comments.all %}
+              <p>
+                <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+                {{ comment }}
+              </p>
+        {% endfor %}
       </div>
     </div>
     <br />
